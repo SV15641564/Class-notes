@@ -1,0 +1,33 @@
+<section id="explorar" data-transition="fade" style="background:#F3EEE3;color:#17262B;font-family:'IBM Plex Sans', Arial, sans-serif;padding:96px 128px 160px;display:flex;flex-direction:column;gap:30px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-family:'JetBrains Mono', monospace;font-size:24px;color:#B0431A;letter-spacing:2px;text-transform:uppercase">pandas · 2 de 4 · primero mirar, después tocar</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:60px;font-weight:700;line-height:1.1">Conoce tus datos antes de usarlos</h2>
+</div>
+<div style="display:flex;gap:40px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-family:'JetBrains Mono', monospace;font-size:24px;color:#1C7C7D;letter-spacing:2px">ventas.head() · 40 ventas sintéticas</p>
+<table style="font-family:'JetBrains Mono', monospace;font-size:24px;color:#17262B;width:1090px">
+<tr><th style="width:11%">id_venta</th><th style="width:16%">fecha</th><th style="width:19%">ciudad</th><th style="width:17%">producto</th><th style="width:12%">cantidad</th><th style="width:25%">precio_unitario</th></tr>
+<tr><td>1</td><td>2026-01-01</td><td>Barranquilla</td><td>Lápiz</td><td>5</td><td>1200.0</td></tr>
+<tr><td>2</td><td>2026-01-04</td><td>Cali</td><td>Cuaderno</td><td>3</td><td>85000.0</td></tr>
+<tr><td>3</td><td>2026-01-07</td><td>Cali</td><td>Calculadora</td><td>9</td><td>1200.0</td></tr>
+<tr><td>4</td><td>2026-01-10</td><td>Barranquilla</td><td>Cuaderno</td><td>8</td><td>85000.0</td></tr>
+<tr><td>5</td><td>2026-01-13</td><td>Cali</td><td>Calculadora</td><td>2</td><td>85000.0</td></tr>
+</table>
+<p style="font-size:26px;color:#4B5A5E;line-height:1.35">Cada fila es una venta; cada columna, un dato de la venta.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:14px">
+<p style="font-family:'JetBrains Mono', monospace;font-size:24px;color:#B0431A;letter-spacing:2px">CÓDIGO → RESULTADO</p>
+<div style="background:#17262B;border-radius:12px;padding:16px 22px"><p style="font-family:'JetBrains Mono', monospace;font-size:24px;line-height:1.5;color:#EDE7D8;white-space:nowrap">ventas.shape</p></div>
+<div style="background:#DCE9E4;border-left:8px solid #1C7C7D;border-radius:12px;padding:12px 22px"><p style="font-family:'JetBrains Mono', monospace;font-size:24px;color:#17262B">(40, 6)</p></div>
+<div style="background:#17262B;border-radius:12px;padding:16px 22px"><p style="font-family:'JetBrains Mono', monospace;font-size:24px;line-height:1.5;color:#EDE7D8;white-space:nowrap">ventas["ciudad"].value_counts()</p></div>
+<div style="background:#DCE9E4;border-left:8px solid #1C7C7D;border-radius:12px;padding:12px 22px"><p style="font-family:'JetBrains Mono', monospace;font-size:24px;line-height:1.45;color:#17262B;white-space:nowrap">Barranquilla&#160;&#160;14<br>Medellín&#160;&#160;&#160;&#160;&#160;&#160;11<br>Cali&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;10<br>Bogotá&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;5</p></div>
+</div>
+</div>
+<div style="display:flex;gap:20px">
+<div style="flex:1;background:#E8E1D1;border-radius:14px;padding:18px 24px"><p style="font-size:26px;line-height:1.35"><b>info()</b> · tipos y faltantes: 40 filas sin nulos en las 6 columnas</p></div>
+<div style="flex:1;background:#E8E1D1;border-radius:14px;padding:18px 24px"><p style="font-size:26px;line-height:1.35"><b>describe()</b> · cantidad media 5,1; precio medio 37.175</p></div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:900px;font-family:'JetBrains Mono', monospace;font-size:24px;color:#4B5A5E">NumPy y pandas · 13 / 25</p>
+<aside>Hábito que debe quedar: nunca analizar sin mirar. head() muestra las primeras 5 filas; shape dice (filas, columnas) = (40, 6); info() lista tipos de dato y cuántos valores no nulos hay por columna (aquí 40 de 40 en todas, así que no faltan datos); describe() resume las columnas numéricas (cantidad media 5,1; precio unitario medio 37.175; mínimo 1.200; máximo 85.000). value_counts() cuenta cuántas veces aparece cada categoría: Barranquilla 14, Medellín 11, Cali 10, Bogotá 5. Pregunta: ¿qué ciudad tiene menos ventas registradas? Bogotá. Guárdelo: reaparecerá en el análisis. El dataset se genera con una semilla fija (7), por eso todos ven los mismos números.</aside>
+</section>

@@ -1,0 +1,29 @@
+<section id="agg" data-transition="fade" style="background:#F3EEE3;color:#17262B;font-family:'IBM Plex Sans', Arial, sans-serif;padding:96px 128px 160px;display:flex;flex-direction:column;gap:28px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-family:'JetBrains Mono', monospace;font-size:24px;color:#B0431A;letter-spacing:2px;text-transform:uppercase">Agrupar · con las 40 ventas</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:60px;font-weight:700;line-height:1.1">Una línea de código, varias respuestas de negocio</h2>
+</div>
+<div style="display:flex;gap:40px">
+<div style="flex:1;display:flex;flex-direction:column;gap:12px">
+<p style="font-family:'JetBrains Mono', monospace;font-size:24px;color:#1C7C7D;letter-spacing:2px">TOTAL POR CIUDAD · millones de COP</p>
+<div style="display:flex;align-items:center;gap:12px"><p style="width:190px;font-family:'JetBrains Mono', monospace;font-size:24px">Barranquilla</p><div style="width:520px;background:#1C7C7D;border-radius:6px;padding:10px 14px"><p style="font-family:'JetBrains Mono', monospace;font-size:24px;font-weight:700;color:#F3EEE3">3,10</p></div></div>
+<div style="display:flex;align-items:center;gap:12px"><p style="width:190px;font-family:'JetBrains Mono', monospace;font-size:24px">Cali</p><div style="width:314px;background:#1C7C7D;border-radius:6px;padding:10px 14px"><p style="font-family:'JetBrains Mono', monospace;font-size:24px;font-weight:700;color:#F3EEE3">1,87</p></div></div>
+<div style="display:flex;align-items:center;gap:12px"><p style="width:190px;font-family:'JetBrains Mono', monospace;font-size:24px">Medellín</p><div style="width:249px;background:#1C7C7D;border-radius:6px;padding:10px 14px"><p style="font-family:'JetBrains Mono', monospace;font-size:24px;font-weight:700;color:#F3EEE3">1,49</p></div></div>
+<div style="display:flex;align-items:center;gap:12px"><p style="width:190px;font-family:'JetBrains Mono', monospace;font-size:24px">Bogotá</p><div style="width:165px;background:#1C7C7D;border-radius:6px;padding:10px 14px"><p style="font-family:'JetBrains Mono', monospace;font-size:24px;font-weight:700;color:#F3EEE3">0,98</p></div></div>
+<div style="background:#17262B;border-radius:12px;padding:16px 22px;margin-top:8px"><p style="font-family:'JetBrains Mono', monospace;font-size:24px;line-height:1.45;color:#EDE7D8;white-space:nowrap">ventas.groupby("ciudad")["total"]<br>.sum().sort_values(ascending=False)</p></div>
+</div>
+<div style="flex:1.1;display:flex;flex-direction:column;gap:12px">
+<p style="font-family:'JetBrains Mono', monospace;font-size:24px;color:#1C7C7D;letter-spacing:2px">VARIAS MÉTRICAS POR PRODUCTO</p>
+<table style="font-family:'JetBrains Mono', monospace;font-size:24px;color:#17262B;width:100%">
+<tr><th style="width:24%">producto</th><th style="width:16%">ventas</th><th style="width:19%">unidades</th><th style="width:20%">total</th><th style="width:21%">ticket_prom</th></tr>
+<tr><td>Cuaderno</td><td>13</td><td>64</td><td>2300600</td><td>176969</td></tr>
+<tr><td>Lápiz</td><td>9</td><td>48</td><td>2154700</td><td>239411</td></tr>
+<tr><td>Calculadora</td><td>10</td><td>50</td><td>1850400</td><td>185040</td></tr>
+<tr><td>Mochila</td><td>8</td><td>42</td><td>1139600</td><td>142450</td></tr>
+</table>
+<div style="background:#17262B;border-radius:12px;padding:16px 22px"><p style="font-family:'JetBrains Mono', monospace;font-size:24px;line-height:1.45;color:#EDE7D8;white-space:nowrap">.groupby("producto").agg(<br>&#160;&#160;ventas=("id_venta", "count"),<br>&#160;&#160;unidades=("cantidad", "sum"),<br>&#160;&#160;total=("total", "sum"),<br>&#160;&#160;ticket_promedio=("total", "mean"))</p></div>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1500px;font-family:'JetBrains Mono', monospace;font-size:24px;color:#4B5A5E">NumPy y pandas · 19 / 25 · ticket_prom = ticket_promedio · datos sintéticos</p>
+<aside>Lectura de negocio con resultados reales. A la izquierda: Barranquilla vende más del triple que Bogotá (3,10 frente a 0,98 millones). Pregunta provocadora: ¿vende Barranquilla más porque vende mejor o porque tiene más filas? Recordar value_counts: Barranquilla tiene 14 ventas y Bogotá solo 5. A la derecha: named aggregation, que permite pedir varias métricas a la vez con nombres claros. Cuaderno es el producto con mayor total (2.300.600) pero Lápiz tiene el mayor ticket promedio (239.411): ordenar por total y por ticket cuenta historias distintas. La columna ticket_prom abrevia ticket_promedio por espacio. Si falta tiempo, esta diapositiva se explica en 3 minutos.</aside>
+</section>

@@ -1,0 +1,48 @@
+<section id="mascara" data-transition="fade" style="background:#F3EEE3;color:#17262B;font-family:'IBM Plex Sans', Arial, sans-serif;padding:96px 128px 160px;display:flex;flex-direction:column;gap:30px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-family:'JetBrains Mono', monospace;font-size:24px;color:#B0431A;letter-spacing:2px;text-transform:uppercase">NumPy · 3 de 5 · algoritmo: máscara booleana</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:60px;font-weight:700;line-height:1.1">Filtrar es poner una plantilla encima</h2>
+</div>
+<div style="display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;align-items:center;gap:16px">
+<p style="width:300px;font-family:'JetBrains Mono', monospace;font-size:26px;font-weight:700">a</p>
+<div style="width:150px;background:#17262B;color:#F3EEE3;border-radius:10px;padding:12px 0"><p style="font-size:38px;font-weight:700;text-align:center">10</p></div>
+<div style="width:150px;background:#17262B;color:#F3EEE3;border-radius:10px;padding:12px 0"><p style="font-size:38px;font-weight:700;text-align:center">20</p></div>
+<div style="width:150px;background:#17262B;color:#F3EEE3;border-radius:10px;padding:12px 0"><p style="font-size:38px;font-weight:700;text-align:center">30</p></div>
+<div style="width:150px;background:#17262B;color:#F3EEE3;border-radius:10px;padding:12px 0"><p style="font-size:38px;font-weight:700;text-align:center">40</p></div>
+<div style="width:150px;background:#17262B;color:#F3EEE3;border-radius:10px;padding:12px 0"><p style="font-size:38px;font-weight:700;text-align:center">50</p></div>
+</div>
+<div style="display:flex;align-items:center;gap:16px">
+<p style="width:300px;font-family:'JetBrains Mono', monospace;font-size:26px;font-weight:700;color:#1C7C7D">a &gt; 25</p>
+<div style="width:150px;background:#E8E1D1;border:3px dashed #4B5A5E;border-radius:10px;padding:9px 0"><p style="font-family:'JetBrains Mono', monospace;font-size:26px;text-align:center">False</p></div>
+<div style="width:150px;background:#E8E1D1;border:3px dashed #4B5A5E;border-radius:10px;padding:9px 0"><p style="font-family:'JetBrains Mono', monospace;font-size:26px;text-align:center">False</p></div>
+<div style="width:150px;background:#1C7C7D;color:#F3EEE3;border:3px solid #1C7C7D;border-radius:10px;padding:9px 0"><p style="font-family:'JetBrains Mono', monospace;font-size:26px;font-weight:700;text-align:center">True</p></div>
+<div style="width:150px;background:#1C7C7D;color:#F3EEE3;border:3px solid #1C7C7D;border-radius:10px;padding:9px 0"><p style="font-family:'JetBrains Mono', monospace;font-size:26px;font-weight:700;text-align:center">True</p></div>
+<div style="width:150px;background:#1C7C7D;color:#F3EEE3;border:3px solid #1C7C7D;border-radius:10px;padding:9px 0"><p style="font-family:'JetBrains Mono', monospace;font-size:26px;font-weight:700;text-align:center">True</p></div>
+</div>
+<div style="display:flex;align-items:center;gap:16px">
+<p style="width:300px;font-family:'JetBrains Mono', monospace;font-size:26px;font-weight:700;color:#B0431A">a[a &gt; 25]</p>
+<div style="width:150px;padding:12px 0"></div>
+<div style="width:150px;padding:12px 0"></div>
+<div style="width:150px;background:#C2491B;color:#17262B;border-radius:10px;padding:12px 0"><p style="font-size:38px;font-weight:700;text-align:center">30</p></div>
+<div style="width:150px;background:#C2491B;color:#17262B;border-radius:10px;padding:12px 0"><p style="font-size:38px;font-weight:700;text-align:center">40</p></div>
+<div style="width:150px;background:#C2491B;color:#17262B;border-radius:10px;padding:12px 0"><p style="font-size:38px;font-weight:700;text-align:center">50</p></div>
+</div>
+</div>
+<div style="display:flex;gap:32px">
+<div style="flex:1.1;display:flex;flex-direction:column;gap:12px">
+<p style="font-family:'JetBrains Mono', monospace;font-size:24px;color:#B0431A;letter-spacing:2px">CÓDIGO</p>
+<div style="background:#17262B;border-radius:16px;padding:24px 30px">
+<p style="font-family:'JetBrains Mono', monospace;font-size:25px;line-height:1.5;color:#EDE7D8;white-space:nowrap">mascara = a &gt; 25<br>print(mascara)<br>print(a[mascara])<br>print(a[(a &gt; 15) &amp; (a &lt; 45)])</p>
+</div>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px">
+<p style="font-family:'JetBrains Mono', monospace;font-size:24px;color:#1C7C7D;letter-spacing:2px">RESULTADO</p>
+<div style="background:#DCE9E4;border-left:8px solid #1C7C7D;border-radius:16px;padding:24px 30px">
+<p style="font-family:'JetBrains Mono', monospace;font-size:25px;line-height:1.5;color:#17262B;white-space:nowrap">[False False&#160;&#160;True&#160;&#160;True&#160;&#160;True]<br>[30 40 50]<br>[20 30 40]</p>
+</div>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1400px;font-family:'JetBrains Mono', monospace;font-size:24px;color:#4B5A5E">NumPy y pandas · 08 / 25 · y/o/no se escriben &amp;, | y ~ con cada condición entre paréntesis</p>
+<aside>Algoritmo en tres pasos: (1) comparar toda la fila con la condición y obtener una fila de True/False del mismo tamaño (la plantilla); (2) poner la plantilla sobre los datos; (3) quedarse solo con lo que cae en True. Pida que predigan el resultado antes de mostrarlo. Insista en el último ejemplo: para combinar condiciones se usan &amp; (y), | (o) y ~ (no), y cada condición va entre paréntesis; con and/or da error. Esta misma idea se usará idéntica en pandas con df[df['precio'] &gt; 50000].</aside>
+</section>

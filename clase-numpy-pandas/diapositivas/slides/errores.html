@@ -1,0 +1,33 @@
+<section id="errores" data-transition="fade" style="background:#F3EEE3;color:#17262B;font-family:'IBM Plex Sans', Arial, sans-serif;padding:96px 128px 160px;display:flex;flex-direction:column;gap:28px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-family:'JetBrains Mono', monospace;font-size:24px;color:#B0431A;letter-spacing:2px;text-transform:uppercase">Buenas prácticas</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:60px;font-weight:700;line-height:1.1">Cuatro tropiezos que todos tenemos al empezar</h2>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+<div style="background:#E8E1D1;border-radius:18px;padding:28px 32px;display:flex;flex-direction:column;gap:12px">
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:36px;font-weight:700">1 · Bucle sobre filas</h3>
+<p style="font-family:'JetBrains Mono', monospace;font-size:24px;color:#8A2E0C;white-space:nowrap">Evita&#160;&#160;for i in range(len(df)): ...</p>
+<p style="font-family:'JetBrains Mono', monospace;font-size:24px;color:#1C6B6C;font-weight:700;white-space:nowrap">Usa&#160;&#160;&#160;&#160;df["a"] * df["b"]</p>
+</div>
+<div style="background:#E8E1D1;border-radius:18px;padding:28px 32px;display:flex;flex-direction:column;gap:12px">
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:36px;font-weight:700">2 · and / or en filtros</h3>
+<p style="font-family:'JetBrains Mono', monospace;font-size:24px;color:#8A2E0C;white-space:nowrap">Evita&#160;&#160;df[a &gt; 1 and b &lt; 2]</p>
+<p style="font-family:'JetBrains Mono', monospace;font-size:24px;color:#1C6B6C;font-weight:700;white-space:nowrap">Usa&#160;&#160;&#160;&#160;df[(a &gt; 1) &amp; (b &lt; 2)]</p>
+</div>
+<div style="background:#E8E1D1;border-radius:18px;padding:28px 32px;display:flex;flex-direction:column;gap:12px">
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:36px;font-weight:700">3 · loc vs iloc</h3>
+<p style="font-family:'JetBrains Mono', monospace;font-size:24px;white-space:nowrap">loc[0:2]&#160;&#160;→ 3 filas (incluye)</p>
+<p style="font-family:'JetBrains Mono', monospace;font-size:24px;white-space:nowrap">iloc[0:2] → 2 filas (excluye)</p>
+</div>
+<div style="background:#E8E1D1;border-radius:18px;padding:28px 32px;display:flex;flex-direction:column;gap:12px">
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:36px;font-weight:700">4 · Modificar un recorte</h3>
+<p style="font-family:'JetBrains Mono', monospace;font-size:24px;color:#8A2E0C;white-space:nowrap">Evita&#160;&#160;sub = df[df.x &gt; 1]; sub["y"] = 0</p>
+<p style="font-family:'JetBrains Mono', monospace;font-size:24px;color:#1C6B6C;font-weight:700;white-space:nowrap">Usa&#160;&#160;&#160;&#160;sub = df[df.x &gt; 1].copy()</p>
+</div>
+</div>
+<div style="background:#17262B;color:#F3EEE3;border-radius:16px;padding:20px 32px">
+<p style="font-size:28px;line-height:1.4">Y siempre: mira <b style="font-family:'JetBrains Mono', monospace;color:#F59A6B">info(), describe(), isna().sum()</b> antes de analizar, y usa datos sintéticos o anonimizados cuando haya personas.</p>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1500px;font-family:'JetBrains Mono', monospace;font-size:24px;color:#4B5A5E">NumPy y pandas · 23 / 25 · rojo oscuro = a evitar · verde azulado = recomendado</p>
+<aside>Cuatro errores, con la palabra «Evita» y «Usa» además del color. (1) Los bucles for sobre filas son lentos y largos; casi siempre existe una operación de columna. (2) En filtros, and/or no funcionan con Series: hay que usar &amp;, | y paréntesis. (3) loc incluye el final, iloc lo excluye; ya lo vimos con resultados reales. (4) Al modificar un recorte de un DataFrame, conviene llamar a .copy() para no alterar el original ni recibir advertencias. Tarea sugerida: buscar en el notebook un ejemplo de cada uno. Cierre con la franja oscura: la costumbre de inspeccionar los datos evita la mayoría de los problemas posteriores.</aside>
+</section>

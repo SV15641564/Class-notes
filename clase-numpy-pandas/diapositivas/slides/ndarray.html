@@ -1,0 +1,34 @@
+<section id="ndarray" data-transition="fade" style="background:#F3EEE3;color:#17262B;font-family:'IBM Plex Sans', Arial, sans-serif;padding:96px 128px 160px;display:flex;flex-direction:column;gap:32px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-family:'JetBrains Mono', monospace;font-size:24px;color:#B0431A;letter-spacing:2px;text-transform:uppercase">NumPy · 1 de 5</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:60px;font-weight:700;line-height:1.1">Un arreglo es una fila de casillas con número</h2>
+</div>
+<div style="display:flex;gap:16px;align-items:flex-end">
+<div style="display:flex;flex-direction:column;gap:6px;align-items:center"><div style="width:150px;background:#17262B;color:#F3EEE3;border-radius:10px;padding:14px 0"><p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:48px;font-weight:700;text-align:center">10</p></div><p style="font-family:'JetBrains Mono', monospace;font-size:24px;color:#4B5A5E">0</p></div>
+<div style="display:flex;flex-direction:column;gap:6px;align-items:center"><div style="width:150px;background:#17262B;color:#F3EEE3;border-radius:10px;padding:14px 0"><p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:48px;font-weight:700;text-align:center">20</p></div><p style="font-family:'JetBrains Mono', monospace;font-size:24px;color:#4B5A5E">1</p></div>
+<div style="display:flex;flex-direction:column;gap:6px;align-items:center"><div style="width:150px;background:#17262B;color:#F3EEE3;border-radius:10px;padding:14px 0"><p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:48px;font-weight:700;text-align:center">30</p></div><p style="font-family:'JetBrains Mono', monospace;font-size:24px;color:#4B5A5E">2</p></div>
+<div style="display:flex;flex-direction:column;gap:6px;align-items:center"><div style="width:150px;background:#17262B;color:#F3EEE3;border-radius:10px;padding:14px 0"><p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:48px;font-weight:700;text-align:center">40</p></div><p style="font-family:'JetBrains Mono', monospace;font-size:24px;color:#4B5A5E">3</p></div>
+<div style="display:flex;flex-direction:column;gap:6px;align-items:center"><div style="width:150px;background:#17262B;color:#F3EEE3;border-radius:10px;padding:14px 0"><p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:48px;font-weight:700;text-align:center">50</p></div><p style="font-family:'JetBrains Mono', monospace;font-size:24px;color:#4B5A5E">4</p></div>
+<div style="flex:1"></div>
+<div style="display:flex;flex-direction:column;gap:10px">
+<p style="font-family:'JetBrains Mono', monospace;font-size:26px;background:#E8E1D1;padding:8px 18px;border-radius:999px">shape (5,)  = 5 casillas</p>
+<p style="font-family:'JetBrains Mono', monospace;font-size:26px;background:#E8E1D1;padding:8px 18px;border-radius:999px">dtype int64 = enteros</p>
+</div>
+</div>
+<div style="display:flex;gap:32px">
+<div style="flex:1.1;display:flex;flex-direction:column;gap:12px">
+<p style="font-family:'JetBrains Mono', monospace;font-size:24px;color:#B0431A;letter-spacing:2px">CÓDIGO</p>
+<div style="background:#17262B;border-radius:16px;padding:26px 30px">
+<p style="font-family:'JetBrains Mono', monospace;font-size:25px;line-height:1.5;color:#EDE7D8;white-space:nowrap">a = np.array([10, 20, 30, 40, 50])<br>print(a, a.dtype, a.shape)<br>m = np.array([[1, 2, 3], [4, 5, 6]])<br>print(m.shape)<br>print(np.arange(0, 10, 2))<br>print(np.linspace(0, 1, 5))</p>
+</div>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px">
+<p style="font-family:'JetBrains Mono', monospace;font-size:24px;color:#1C7C7D;letter-spacing:2px">RESULTADO</p>
+<div style="background:#DCE9E4;border-left:8px solid #1C7C7D;border-radius:16px;padding:26px 30px">
+<p style="font-family:'JetBrains Mono', monospace;font-size:25px;line-height:1.5;color:#17262B;white-space:nowrap">[10 20 30 40 50] int64 (5,)<br>(2, 3)<br>[0 2 4 6 8]<br>[0.&#160;&#160;&#160;0.25 0.5&#160;&#160;0.75 1.&#160;&#160;]</p>
+</div>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:900px;font-family:'JetBrains Mono', monospace;font-size:24px;color:#4B5A5E">NumPy y pandas · 06 / 25</p>
+<aside>Muestre primero el dibujo y luego el código. Tres ideas: (1) el arreglo guarda valores del mismo tipo (dtype); (2) cada casilla tiene una posición que empieza en 0; (3) shape es (filas, columnas): para un arreglo de una dimensión es solo (5,). arange es como range pero devuelve un arreglo; linspace reparte N puntos equidistantes. Error típico: creer que shape (5,) y (5,1) son lo mismo; lo veremos en broadcasting. Pregunta: ¿cuántas casillas tiene una matriz de forma (2, 3)? Seis.</aside>
+</section>

@@ -1,0 +1,36 @@
+<section id="proyecto" data-transition="fade" style="background:#F3EEE3;color:#17262B;font-family:'IBM Plex Sans', Arial, sans-serif;padding:96px 128px 160px;display:flex;flex-direction:column;gap:28px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-family:'JetBrains Mono', monospace;font-size:24px;color:#B0431A;letter-spacing:2px;text-transform:uppercase">Mini-proyecto · todo junto</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:60px;font-weight:700;line-height:1.1">¿Qué ciudad y producto generan más ingresos?</h2>
+</div>
+<div style="display:flex;gap:14px;align-items:center">
+<div style="flex:1;background:#E8E1D1;border-radius:14px;padding:16px 20px"><p style="font-size:28px;font-weight:600;text-align:center">Cargar</p></div>
+<p style="font-size:36px;color:#B0431A">→</p>
+<div style="flex:1;background:#E8E1D1;border-radius:14px;padding:16px 20px"><p style="font-size:28px;font-weight:600;text-align:center">Validar</p></div>
+<p style="font-size:36px;color:#B0431A">→</p>
+<div style="flex:1;background:#E8E1D1;border-radius:14px;padding:16px 20px"><p style="font-size:28px;font-weight:600;text-align:center">Transformar</p></div>
+<p style="font-size:36px;color:#B0431A">→</p>
+<div style="flex:1;background:#E8E1D1;border-radius:14px;padding:16px 20px"><p style="font-size:28px;font-weight:600;text-align:center">Agrupar</p></div>
+<p style="font-size:36px;color:#B0431A">→</p>
+<div style="flex:1;background:#17262B;color:#F3EEE3;border-radius:14px;padding:16px 20px"><p style="font-size:28px;font-weight:600;text-align:center">Comunicar</p></div>
+</div>
+<div style="display:flex;gap:36px">
+<div style="flex:1.05;display:flex;flex-direction:column;gap:12px">
+<p style="font-family:'JetBrains Mono', monospace;font-size:24px;color:#B0431A;letter-spacing:2px">CÓDIGO</p>
+<div style="background:#17262B;border-radius:16px;padding:22px 26px">
+<p style="font-family:'JetBrains Mono', monospace;font-size:24px;line-height:1.5;color:#EDE7D8;white-space:nowrap"><span style="color:#8FB5B3"># validar: si falla, se detiene</span><br>assert df["id_venta"].is_unique<br>assert df[["cantidad","precio_unitario"]]<br>&#160;&#160;.gt(0).all().all()<br><span style="color:#8FB5B3"># transformar y agrupar</span><br>df["ingreso"] = df["cantidad"] * df["precio_unitario"]<br>df.groupby(["ciudad","producto"])["ingreso"]<br>&#160;&#160;.sum().sort_values(ascending=False).head(5)</p>
+</div>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:10px">
+<p style="font-family:'JetBrains Mono', monospace;font-size:24px;color:#1C7C7D;letter-spacing:2px">TOP 5 · millones de COP</p>
+<div style="display:flex;align-items:center;gap:12px"><p style="width:290px;font-family:'JetBrains Mono', monospace;font-size:24px">Barranquilla·Cuaderno</p><div style="width:310px;background:#1C7C7D;border-radius:6px;padding:8px 12px"><p style="font-family:'JetBrains Mono', monospace;font-size:24px;font-weight:700;color:#F3EEE3">1,49</p></div></div>
+<div style="display:flex;align-items:center;gap:12px"><p style="width:290px;font-family:'JetBrains Mono', monospace;font-size:24px">Cali·Calculadora</p><div style="width:235px;background:#1C7C7D;border-radius:6px;padding:8px 12px"><p style="font-family:'JetBrains Mono', monospace;font-size:24px;font-weight:700;color:#F3EEE3">1,13</p></div></div>
+<div style="display:flex;align-items:center;gap:12px"><p style="width:290px;font-family:'JetBrains Mono', monospace;font-size:24px">Bogotá·Lápiz</p><div style="width:199px;background:#1C7C7D;border-radius:6px;padding:8px 12px"><p style="font-family:'JetBrains Mono', monospace;font-size:24px;font-weight:700;color:#F3EEE3">0,96</p></div></div>
+<div style="display:flex;align-items:center;gap:12px"><p style="width:290px;font-family:'JetBrains Mono', monospace;font-size:24px">Barranquilla·Lápiz</p><div style="width:175px;background:#1C7C7D;border-radius:6px;padding:8px 12px"><p style="font-family:'JetBrains Mono', monospace;font-size:24px;font-weight:700;color:#F3EEE3">0,84</p></div></div>
+<div style="display:flex;align-items:center;gap:12px"><p style="width:290px;font-family:'JetBrains Mono', monospace;font-size:24px">Barranquilla·Mochila</p><div style="width:154px;background:#1C7C7D;border-radius:6px;padding:8px 12px"><p style="font-family:'JetBrains Mono', monospace;font-size:24px;font-weight:700;color:#F3EEE3">0,74</p></div></div>
+<p style="font-size:26px;color:#4B5A5E;line-height:1.35;padding-top:6px">Barranquilla aparece 3 veces en el top 5.</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:900px;font-family:'JetBrains Mono', monospace;font-size:24px;color:#4B5A5E">NumPy y pandas · 22 / 25 · datos sintéticos</p>
+<aside>Integre todo lo visto en un flujo de trabajo repetible. Cargar: en un caso real sería pd.read_csv(...); aquí se copia el DataFrame de ventas. Validar: dos assert comprueban supuestos (ids únicos, cantidades y precios positivos); si alguno falla el programa se detiene en vez de producir un análisis falso. Transformar: se crea la columna ingreso. Agrupar: groupby por dos claves, ordenar y quedarse con los 5 primeros. Resultado real: Barranquilla–Cuaderno 1.490.000; Cali–Calculadora 1.127.000; Bogotá–Lápiz 956.200; Barranquilla–Lápiz 843.500; Barranquilla–Mochila 742.500. Comunicar: en el notebook hay además una gráfica de barras por mes y región. Aclare que los datos son aleatorios y la conclusión no significa nada del mundo real: lo que se evalúa es el método.</aside>
+</section>

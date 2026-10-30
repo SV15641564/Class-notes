@@ -1,0 +1,31 @@
+<section id="ordenar" data-transition="fade" style="background:#F3EEE3;color:#17262B;font-family:'IBM Plex Sans', Arial, sans-serif;padding:96px 128px 160px;display:flex;flex-direction:column;gap:28px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-family:'JetBrains Mono', monospace;font-size:24px;color:#B0431A;letter-spacing:2px;text-transform:uppercase">pandas · algoritmo: ordenamiento</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:60px;font-weight:700;line-height:1.1">Ordenar es reubicar filas por una o varias claves</h2>
+</div>
+<div style="display:flex;gap:40px">
+<div style="flex:1.25;display:flex;flex-direction:column;gap:12px">
+<p style="font-family:'JetBrains Mono', monospace;font-size:24px;color:#1C7C7D;letter-spacing:2px">TOP 5 POR total · mayor a menor</p>
+<div style="display:flex;align-items:center;gap:14px"><p style="width:250px;font-family:'JetBrains Mono', monospace;font-size:24px">#38 Calculadora</p><div style="width:620px;background:#1C7C7D;border-radius:6px;padding:10px 14px"><p style="font-family:'JetBrains Mono', monospace;font-size:24px;font-weight:700;color:#F3EEE3">765.000</p></div></div>
+<div style="display:flex;align-items:center;gap:14px"><p style="width:250px;font-family:'JetBrains Mono', monospace;font-size:24px">#4 Cuaderno</p><div style="width:551px;background:#1C7C7D;border-radius:6px;padding:10px 14px"><p style="font-family:'JetBrains Mono', monospace;font-size:24px;font-weight:700;color:#F3EEE3">680.000</p></div></div>
+<div style="display:flex;align-items:center;gap:14px"><p style="width:250px;font-family:'JetBrains Mono', monospace;font-size:24px">#9 Lápiz</p><div style="width:482px;background:#1C7C7D;border-radius:6px;padding:10px 14px"><p style="font-family:'JetBrains Mono', monospace;font-size:24px;font-weight:700;color:#F3EEE3">595.000</p></div></div>
+<div style="display:flex;align-items:center;gap:14px"><p style="width:250px;font-family:'JetBrains Mono', monospace;font-size:24px">#7 Cuaderno</p><div style="width:438px;background:#1C7C7D;border-radius:6px;padding:10px 14px"><p style="font-family:'JetBrains Mono', monospace;font-size:24px;font-weight:700;color:#F3EEE3">540.000</p></div></div>
+<div style="display:flex;align-items:center;gap:14px"><p style="width:250px;font-family:'JetBrains Mono', monospace;font-size:24px">#29 Calculadora</p><div style="width:414px;background:#1C7C7D;border-radius:6px;padding:10px 14px"><p style="font-family:'JetBrains Mono', monospace;font-size:24px;font-weight:700;color:#F3EEE3">510.000</p></div></div>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'JetBrains Mono', monospace;font-size:24px;color:#B0431A;letter-spacing:2px">CÓDIGO</p>
+<div style="background:#17262B;border-radius:16px;padding:22px 26px">
+<p style="font-family:'JetBrains Mono', monospace;font-size:24px;line-height:1.5;color:#EDE7D8;white-space:nowrap">ventas.sort_values(<br>&#160;&#160;"total", ascending=False<br>).head(5)</p>
+</div>
+<div style="background:#E8E1D1;border-radius:16px;padding:20px 24px;display:flex;flex-direction:column;gap:6px">
+<p style="font-size:26px;font-weight:600">Dos claves: ["ciudad", "total"]</p>
+<p style="font-size:26px;line-height:1.35">Primero A→Z por ciudad; dentro de cada ciudad, mayor a menor. Barranquilla abre con 680.000, 540.000 y 480.000.</p>
+</div>
+</div>
+</div>
+<div style="background:#17262B;color:#F3EEE3;border-radius:16px;padding:20px 32px">
+<p style="font-size:28px;line-height:1.4">Costo: ordenar n filas toma ~ <b style="font-family:'JetBrains Mono', monospace;color:#F59A6B">n log n</b> pasos. Con 1.000.000 de filas son ≈ 20 millones de comparaciones, no un billón.</p>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:900px;font-family:'JetBrains Mono', monospace;font-size:24px;color:#4B5A5E">NumPy y pandas · 16 / 25 · ventas sintéticas</p>
+<aside>Las barras son proporcionales al total, para que se vea el orden. sort_values reubica las filas completas, no solo la columna. Con varias claves desempata de izquierda a derecha: ciudad en orden alfabético y, dentro de cada ciudad, total de mayor a menor (resultado real: Barranquilla Cuaderno 680.000, Barranquilla Cuaderno 540.000, Barranquilla Lápiz 480.000…). Sobre el costo: los algoritmos de ordenamiento eficientes dividen y combinan; por eso crece como n log n y no como n al cuadrado. Para 1.000.000 de filas, log2 ≈ 20, es decir ≈ 20 millones de pasos. Nótese que el índice de cada fila (38, 4, 9…) viaja con ella: es la razón por la que loc y iloc se separan después de ordenar.</aside>
+</section>

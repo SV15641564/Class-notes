@@ -1,0 +1,48 @@
+<section id="zscore" data-transition="fade" style="background:#F3EEE3;color:#17262B;font-family:'IBM Plex Sans', Arial, sans-serif;padding:96px 128px 160px;display:flex;flex-direction:column;gap:30px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-family:'JetBrains Mono', monospace;font-size:24px;color:#B0431A;letter-spacing:2px;text-transform:uppercase">NumPy · algoritmo: normalización</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:60px;font-weight:700;line-height:1.1">Re-medir todo con la misma regla</h2>
+</div>
+<div style="display:flex;gap:20px;align-items:center">
+<div style="background:#E8E1D1;border-radius:16px;padding:20px 28px"><p style="font-family:'JetBrains Mono', monospace;font-size:26px">1 · restar la media</p></div>
+<p style="font-size:44px;color:#B0431A">→</p>
+<div style="background:#E8E1D1;border-radius:16px;padding:20px 28px"><p style="font-family:'JetBrains Mono', monospace;font-size:26px">2 · dividir por la desviación</p></div>
+<p style="font-size:44px;color:#B0431A">→</p>
+<div style="background:#17262B;color:#F3EEE3;border-radius:16px;padding:20px 28px"><p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:36px;font-weight:700">z = (x − media) / σ</p></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;align-items:center;gap:14px">
+<p style="width:250px;font-family:'JetBrains Mono', monospace;font-size:24px;color:#4B5A5E">examen 1 (media 3.75)</p>
+<div style="width:190px;background:#E8E1D1;border-radius:8px;padding:10px 0"><p style="font-size:32px;font-weight:600;text-align:center">3.5</p></div>
+<div style="width:190px;background:#E8E1D1;border-radius:8px;padding:10px 0"><p style="font-size:32px;font-weight:600;text-align:center">4.5</p></div>
+<div style="width:190px;background:#E8E1D1;border-radius:8px;padding:10px 0"><p style="font-size:32px;font-weight:600;text-align:center">2.0</p></div>
+<div style="width:190px;background:#E8E1D1;border-radius:8px;padding:10px 0"><p style="font-size:32px;font-weight:600;text-align:center">5.0</p></div>
+<p style="flex:1;font-size:26px;color:#4B5A5E">notas originales</p>
+</div>
+<div style="display:flex;align-items:center;gap:14px">
+<p style="width:250px;font-family:'JetBrains Mono', monospace;font-size:24px;color:#4B5A5E">z-score</p>
+<div style="width:190px;background:#C2491B;color:#17262B;border-radius:8px;padding:10px 0"><p style="font-size:32px;font-weight:700;text-align:center">−0.22</p></div>
+<div style="width:190px;background:#1C7C7D;color:#F3EEE3;border-radius:8px;padding:10px 0"><p style="font-size:32px;font-weight:700;text-align:center">+0.65</p></div>
+<div style="width:190px;background:#C2491B;color:#17262B;border-radius:8px;padding:10px 0"><p style="font-size:32px;font-weight:700;text-align:center">−1.53</p></div>
+<div style="width:190px;background:#1C7C7D;color:#F3EEE3;border-radius:8px;padding:10px 0"><p style="font-size:32px;font-weight:700;text-align:center">+1.09</p></div>
+<p style="flex:1;font-size:26px;color:#4B5A5E">naranja: bajo la media · verde azulado: sobre la media</p>
+</div>
+</div>
+<div style="display:flex;gap:32px">
+<div style="flex:1.45;display:flex;flex-direction:column;gap:12px">
+<p style="font-family:'JetBrains Mono', monospace;font-size:24px;color:#B0431A;letter-spacing:2px">CÓDIGO</p>
+<div style="background:#17262B;border-radius:16px;padding:22px 30px">
+<p style="font-family:'JetBrains Mono', monospace;font-size:25px;line-height:1.5;color:#EDE7D8;white-space:nowrap">z = (notas - notas.mean(axis=0)) / notas.std(axis=0)<br>print(z.round(2))</p>
+</div>
+<p style="font-size:26px;color:#4B5A5E;line-height:1.35">Funciona por broadcasting: la fila de medias se estira sobre las 4 filas.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px">
+<p style="font-family:'JetBrains Mono', monospace;font-size:24px;color:#1C7C7D;letter-spacing:2px">RESULTADO · 3 exámenes</p>
+<div style="background:#DCE9E4;border-left:8px solid #1C7C7D;border-radius:16px;padding:22px 30px">
+<p style="font-family:'JetBrains Mono', monospace;font-size:25px;line-height:1.5;color:#17262B;white-space:nowrap">[[-0.22 -0.08 -1.1&#160;]<br>&#160;[&#160;0.65&#160;&#160;0.23&#160;&#160;1.05]<br>&#160;[-1.53 -1.48 -0.89]<br>&#160;[&#160;1.09&#160;&#160;1.32&#160;&#160;0.94]]</p>
+</div>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1400px;font-family:'JetBrains Mono', monospace;font-size:24px;color:#4B5A5E">NumPy y pandas · 11 / 25 · comprobado en el notebook: media 0 y desviación 1 por columna</p>
+<aside>Por qué normalizar: un 4.0 no significa lo mismo en un examen fácil que en uno difícil. Restar la media centra los datos en cero; dividir por la desviación estándar mide cuántas desviaciones se aleja cada nota de la media. Negativo = por debajo del promedio; positivo = por encima. Se comprobó en el notebook que, tras la transformación, cada columna tiene media 0 y desviación 1. Hay una alternativa, min-max: (x − mín)/(máx − mín), que deja todo entre 0 y 1; en el notebook da, para el primer examen, 0.5, 0.83, 0 y 1. Conexión con la diapositiva anterior: notas.mean(axis=0) es una fila de 3 números y se resta a la matriz de 4×3 por broadcasting. Pregunta: ¿qué alumno está más lejos de la media en el examen 1? El de 2.0 (z = −1.53).</aside>
+</section>

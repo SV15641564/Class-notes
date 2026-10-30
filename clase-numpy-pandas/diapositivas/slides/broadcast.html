@@ -1,0 +1,45 @@
+<section id="broadcast" data-transition="fade" style="background:#F3EEE3;color:#17262B;font-family:'IBM Plex Sans', Arial, sans-serif;padding:96px 128px 160px;display:flex;flex-direction:column;gap:30px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-family:'JetBrains Mono', monospace;font-size:24px;color:#B0431A;letter-spacing:2px;text-transform:uppercase">NumPy · 4 de 5 · algoritmo: broadcasting</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:60px;font-weight:700;line-height:1.1">La fila pequeña se estira para encajar</h2>
+</div>
+<div style="display:flex;align-items:center;gap:28px">
+<div style="display:flex;flex-direction:column;gap:8px">
+<p style="font-family:'JetBrains Mono', monospace;font-size:24px;color:#4B5A5E">m · forma (2, 3)</p>
+<div style="display:flex;gap:8px"><div style="width:100px;background:#17262B;color:#F3EEE3;border-radius:8px;padding:14px 0"><p style="font-size:34px;font-weight:700;text-align:center">1</p></div><div style="width:100px;background:#17262B;color:#F3EEE3;border-radius:8px;padding:14px 0"><p style="font-size:34px;font-weight:700;text-align:center">2</p></div><div style="width:100px;background:#17262B;color:#F3EEE3;border-radius:8px;padding:14px 0"><p style="font-size:34px;font-weight:700;text-align:center">3</p></div></div>
+<div style="display:flex;gap:8px"><div style="width:100px;background:#17262B;color:#F3EEE3;border-radius:8px;padding:14px 0"><p style="font-size:34px;font-weight:700;text-align:center">4</p></div><div style="width:100px;background:#17262B;color:#F3EEE3;border-radius:8px;padding:14px 0"><p style="font-size:34px;font-weight:700;text-align:center">5</p></div><div style="width:100px;background:#17262B;color:#F3EEE3;border-radius:8px;padding:14px 0"><p style="font-size:34px;font-weight:700;text-align:center">6</p></div></div>
+</div>
+<p style="font-size:56px;font-weight:700;color:#B0431A">+</p>
+<div style="display:flex;flex-direction:column;gap:8px">
+<p style="font-family:'JetBrains Mono', monospace;font-size:24px;color:#4B5A5E">fila · forma (3,)</p>
+<div style="display:flex;gap:8px"><div style="width:100px;background:#C2491B;color:#17262B;border-radius:8px;padding:14px 0"><p style="font-size:34px;font-weight:700;text-align:center">100</p></div><div style="width:100px;background:#C2491B;color:#17262B;border-radius:8px;padding:14px 0"><p style="font-size:34px;font-weight:700;text-align:center">200</p></div><div style="width:100px;background:#C2491B;color:#17262B;border-radius:8px;padding:14px 0"><p style="font-size:34px;font-weight:700;text-align:center">300</p></div></div>
+<div style="display:flex;gap:8px;opacity:0.55"><div style="width:100px;border:3px dashed #C2491B;border-radius:8px;padding:11px 0"><p style="font-size:34px;font-weight:700;text-align:center;color:#B0431A">100</p></div><div style="width:100px;border:3px dashed #C2491B;border-radius:8px;padding:11px 0"><p style="font-size:34px;font-weight:700;text-align:center;color:#B0431A">200</p></div><div style="width:100px;border:3px dashed #C2491B;border-radius:8px;padding:11px 0"><p style="font-size:34px;font-weight:700;text-align:center;color:#B0431A">300</p></div></div>
+</div>
+<p style="font-size:56px;font-weight:700;color:#B0431A">=</p>
+<div style="display:flex;flex-direction:column;gap:8px">
+<p style="font-family:'JetBrains Mono', monospace;font-size:24px;color:#4B5A5E">resultado · (2, 3)</p>
+<div style="display:flex;gap:8px"><div style="width:100px;background:#1C7C7D;color:#F3EEE3;border-radius:8px;padding:14px 0"><p style="font-size:34px;font-weight:700;text-align:center">101</p></div><div style="width:100px;background:#1C7C7D;color:#F3EEE3;border-radius:8px;padding:14px 0"><p style="font-size:34px;font-weight:700;text-align:center">202</p></div><div style="width:100px;background:#1C7C7D;color:#F3EEE3;border-radius:8px;padding:14px 0"><p style="font-size:34px;font-weight:700;text-align:center">303</p></div></div>
+<div style="display:flex;gap:8px"><div style="width:100px;background:#1C7C7D;color:#F3EEE3;border-radius:8px;padding:14px 0"><p style="font-size:34px;font-weight:700;text-align:center">104</p></div><div style="width:100px;background:#1C7C7D;color:#F3EEE3;border-radius:8px;padding:14px 0"><p style="font-size:34px;font-weight:700;text-align:center">205</p></div><div style="width:100px;background:#1C7C7D;color:#F3EEE3;border-radius:8px;padding:14px 0"><p style="font-size:34px;font-weight:700;text-align:center">306</p></div></div>
+</div>
+<div style="flex:1;background:#E8E1D1;border-radius:16px;padding:24px 28px;display:flex;flex-direction:column;gap:8px">
+<p style="font-size:28px;font-weight:600">Regla, de derecha a izquierda</p>
+<p style="font-size:28px;line-height:1.35">Cada par de medidas debe ser <b>igual</b> o una debe valer <b>1</b> (o faltar).</p>
+</div>
+</div>
+<div style="display:flex;gap:32px">
+<div style="flex:1.1;display:flex;flex-direction:column;gap:12px">
+<p style="font-family:'JetBrains Mono', monospace;font-size:24px;color:#B0431A;letter-spacing:2px">CÓDIGO</p>
+<div style="background:#17262B;border-radius:16px;padding:24px 30px">
+<p style="font-family:'JetBrains Mono', monospace;font-size:25px;line-height:1.5;color:#EDE7D8;white-space:nowrap">fila = np.array([100, 200, 300])<br>print(m + fila)<br>m + np.array([1, 2])<br><span style="color:#8FB5B3"># formas (2,3) y (2,) → error</span></p>
+</div>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px">
+<p style="font-family:'JetBrains Mono', monospace;font-size:24px;color:#1C7C7D;letter-spacing:2px">RESULTADO</p>
+<div style="background:#DCE9E4;border-left:8px solid #1C7C7D;border-radius:16px;padding:24px 30px">
+<p style="font-family:'JetBrains Mono', monospace;font-size:25px;line-height:1.5;color:#17262B;white-space:nowrap">[[101 202 303]<br>&#160;[104 205 306]]<br><span style="color:#8A2E0C;font-weight:700">ValueError:</span> operands could not<br>be broadcast together with<br>shapes (2,3) (2,)</p>
+</div>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:900px;font-family:'JetBrains Mono', monospace;font-size:24px;color:#4B5A5E">NumPy y pandas · 09 / 25</p>
+<aside>Imagen mental: la fila de 3 números se fotocopia hacia abajo, sin gastar memoria real, hasta tener el mismo tamaño que la matriz (las casillas punteadas son la copia virtual). Algoritmo: NumPy alinea las formas por la derecha. (2,3) contra (3,): 3 con 3 coincide; el 2 no tiene pareja, así que la fila se repite. (2,3) contra (2,): se compara 3 con 2, no coinciden y ninguno es 1, por eso falla. Pregunta para el grupo: ¿qué pasaría con una columna de forma (2,1)? Se estiraría a lo ancho: es el ejemplo m + col del notebook (resultado [[1001 1002 1003] [2004 2005 2006]]). Esta idea sostiene la normalización de la siguiente diapositiva.</aside>
+</section>

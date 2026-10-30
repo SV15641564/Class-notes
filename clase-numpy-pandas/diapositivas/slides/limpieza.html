@@ -1,0 +1,41 @@
+<section id="limpieza" data-transition="fade" style="background:#F3EEE3;color:#17262B;font-family:'IBM Plex Sans', Arial, sans-serif;padding:96px 128px 160px;display:flex;flex-direction:column;gap:28px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-family:'JetBrains Mono', monospace;font-size:24px;color:#B0431A;letter-spacing:2px;text-transform:uppercase">Limpieza · los datos reales llegan sucios</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:60px;font-weight:700;line-height:1.1">De la hoja desordenada a la tabla confiable</h2>
+</div>
+<div style="display:flex;gap:28px;align-items:flex-start">
+<div style="display:flex;flex-direction:column;gap:10px">
+<p style="font-family:'JetBrains Mono', monospace;font-size:24px;color:#B0431A;letter-spacing:2px">ANTES · sucio</p>
+<table style="font-family:'JetBrains Mono', monospace;font-size:24px;color:#17262B;width:740px">
+<tr><th style="width:30%">nombre</th><th style="width:14%">edad</th><th style="width:26%">ciudad</th><th style="width:30%">ingreso</th></tr>
+<tr><td>␣␣ana pérez</td><td>23</td><td style="color:#8A2E0C">bogotá</td><td>2500000.0</td></tr>
+<tr><td style="color:#8A2E0C">LUIS GÓMEZ␣</td><td>31</td><td>Bogotá</td><td style="color:#8A2E0C">NaN</td></tr>
+<tr><td>Marta Ruiz</td><td>27</td><td>Cali</td><td>3100000.0</td></tr>
+<tr><td style="color:#8A2E0C">Marta Ruiz</td><td style="color:#8A2E0C">27</td><td style="color:#8A2E0C">Cali</td><td style="color:#8A2E0C">3100000.0</td></tr>
+<tr><td>Pedro Sosa</td><td style="color:#8A2E0C">abc</td><td style="color:#8A2E0C">medellín</td><td>2800000.0</td></tr>
+<tr><td style="color:#8A2E0C">None</td><td>40</td><td>Cali</td><td style="color:#8A2E0C">NaN</td></tr>
+</table>
+</div>
+<div style="display:flex;flex-direction:column;gap:6px;align-items:center;width:140px;padding-top:140px"><p style="font-family:'JetBrains Mono', monospace;font-size:24px;font-weight:700;color:#17262B">limpiar()</p><p style="font-size:64px;color:#B0431A;line-height:1">→</p></div>
+<div style="display:flex;flex-direction:column;gap:10px">
+<p style="font-family:'JetBrains Mono', monospace;font-size:24px;color:#1C7C7D;letter-spacing:2px">DESPUÉS · limpio</p>
+<table style="font-family:'JetBrains Mono', monospace;font-size:24px;color:#17262B;width:700px">
+<tr><th style="width:30%">nombre</th><th style="width:14%">edad</th><th style="width:26%">ciudad</th><th style="width:30%">ingreso</th></tr>
+<tr><td>Ana Pérez</td><td>23.0</td><td>Bogotá</td><td>2500000.0</td></tr>
+<tr><td>Luis Gómez</td><td>31.0</td><td>Bogotá</td><td style="color:#1C7C7D">2950000.0</td></tr>
+<tr><td>Marta Ruiz</td><td>27.0</td><td>Cali</td><td>3100000.0</td></tr>
+<tr><td>Pedro Sosa</td><td style="color:#8A2E0C">NaN</td><td>Medellín</td><td>2800000.0</td></tr>
+</table>
+</div>
+</div>
+<div style="display:flex;gap:14px">
+<div style="flex:1;background:#E8E1D1;border-radius:12px;padding:16px 18px"><p style="font-family:'JetBrains Mono', monospace;font-size:24px;line-height:1.35">.dropna(subset=["nombre"])</p></div>
+<div style="flex:1;background:#E8E1D1;border-radius:12px;padding:16px 18px"><p style="font-family:'JetBrains Mono', monospace;font-size:24px;line-height:1.35">.str.strip().str.title()</p></div>
+<div style="flex:1;background:#E8E1D1;border-radius:12px;padding:16px 18px"><p style="font-family:'JetBrains Mono', monospace;font-size:24px;line-height:1.35">to_numeric(errors="coerce")</p></div>
+<div style="flex:1;background:#E8E1D1;border-radius:12px;padding:16px 18px"><p style="font-family:'JetBrains Mono', monospace;font-size:24px;line-height:1.35">.fillna(mediana)</p></div>
+<div style="flex:1;background:#E8E1D1;border-radius:12px;padding:16px 18px"><p style="font-family:'JetBrains Mono', monospace;font-size:24px;line-height:1.35">.drop_duplicates()</p></div>
+</div>
+<p style="font-size:26px;color:#4B5A5E;line-height:1.35">Rojo oscuro: problema o dato sin convertir · verde azulado: valor imputado con la mediana</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1500px;font-family:'JetBrains Mono', monospace;font-size:24px;color:#4B5A5E">NumPy y pandas · 17 / 25 · ␣ = espacio sobrante · se omite la columna de fechas por espacio</p>
+<aside>Muestre la tabla de la izquierda y pida al grupo que encuentre los problemas antes de revelar: espacios sobrantes y mayúsculas inconsistentes (bogotá / Bogotá), un nombre faltante, dos ingresos faltantes (NaN), una edad escrita como texto «abc», y una fila duplicada (Marta Ruiz). A la derecha está el resultado de la función limpiar() del notebook. Detalles que conviene comentar: (1) la fila sin nombre se elimina; (2) el ingreso de Luis se completa con la mediana (2.950.000), que es más robusta que la media ante valores extremos; (3) 'abc' pasa a NaN con errors='coerce', así el error queda visible en vez de romper el programa; (4) los duplicados se eliminan al final. La edad de Pedro sigue en NaN: es el ejercicio 3 del notebook (rellenar con la mediana, resultado 27.0). La columna de fechas (incluye un formato '05/02/2026' que se convierte en NaT) se omite aquí para que quepa. Las cinco fichas de abajo son los métodos usados, en el orden de la función.</aside>
+</section>

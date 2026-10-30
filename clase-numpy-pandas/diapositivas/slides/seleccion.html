@@ -1,0 +1,45 @@
+<section id="seleccion" data-transition="fade" style="background:#F3EEE3;color:#17262B;font-family:'IBM Plex Sans', Arial, sans-serif;padding:96px 128px 160px;display:flex;flex-direction:column;gap:30px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-family:'JetBrains Mono', monospace;font-size:24px;color:#B0431A;letter-spacing:2px;text-transform:uppercase">pandas · 3 de 4 · seleccionar</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:60px;font-weight:700;line-height:1.1">loc pide por nombre, iloc pide por puesto</h2>
+</div>
+<div style="display:flex;gap:32px">
+<div style="flex:1;background:#E8E1D1;border-radius:20px;padding:32px;display:flex;flex-direction:column;gap:18px">
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:40px;font-weight:700;color:#1C7C7D">loc · Label (etiqueta)</h3>
+<div style="display:flex;gap:8px;align-items:center">
+<div style="width:90px;background:#1C7C7D;color:#F3EEE3;border-radius:8px;padding:10px 0"><p style="font-size:30px;font-weight:700;text-align:center">0</p></div>
+<div style="width:90px;background:#1C7C7D;color:#F3EEE3;border-radius:8px;padding:10px 0"><p style="font-size:30px;font-weight:700;text-align:center">1</p></div>
+<div style="width:90px;background:#1C7C7D;color:#F3EEE3;border-radius:8px;padding:10px 0"><p style="font-size:30px;font-weight:700;text-align:center">2</p></div>
+<div style="width:90px;border:3px dashed #4B5A5E;border-radius:8px;padding:7px 0"><p style="font-size:30px;text-align:center;color:#4B5A5E">3</p></div>
+<div style="width:90px;border:3px dashed #4B5A5E;border-radius:8px;padding:7px 0"><p style="font-size:30px;text-align:center;color:#4B5A5E">4</p></div>
+<p style="font-size:26px;font-weight:600;padding-left:8px">3 filas: incluye el 2</p>
+</div>
+<div style="background:#17262B;border-radius:12px;padding:14px 20px"><p style="font-family:'JetBrains Mono', monospace;font-size:24px;color:#EDE7D8;white-space:nowrap">ventas.loc[0:2, ["producto","cantidad"]]</p></div>
+<table style="font-family:'JetBrains Mono', monospace;font-size:24px;color:#17262B;width:100%">
+<tr><th style="width:12%"></th><th style="width:50%">producto</th><th style="width:38%">cantidad</th></tr>
+<tr><td>0</td><td>Lápiz</td><td>5</td></tr>
+<tr><td>1</td><td>Cuaderno</td><td>3</td></tr>
+<tr><td>2</td><td>Calculadora</td><td>9</td></tr>
+</table>
+</div>
+<div style="flex:1;background:#E8E1D1;border-radius:20px;padding:32px;display:flex;flex-direction:column;gap:18px">
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:40px;font-weight:700;color:#B0431A">iloc · Integer (posición)</h3>
+<div style="display:flex;gap:8px;align-items:center">
+<div style="width:90px;background:#C2491B;color:#17262B;border-radius:8px;padding:10px 0"><p style="font-size:30px;font-weight:700;text-align:center">0</p></div>
+<div style="width:90px;background:#C2491B;color:#17262B;border-radius:8px;padding:10px 0"><p style="font-size:30px;font-weight:700;text-align:center">1</p></div>
+<div style="width:90px;border:3px dashed #4B5A5E;border-radius:8px;padding:7px 0"><p style="font-size:30px;text-align:center;color:#4B5A5E">2</p></div>
+<div style="width:90px;border:3px dashed #4B5A5E;border-radius:8px;padding:7px 0"><p style="font-size:30px;text-align:center;color:#4B5A5E">3</p></div>
+<div style="width:90px;border:3px dashed #4B5A5E;border-radius:8px;padding:7px 0"><p style="font-size:30px;text-align:center;color:#4B5A5E">4</p></div>
+<p style="font-size:26px;font-weight:600;padding-left:8px">2 filas: excluye el 2</p>
+</div>
+<div style="background:#17262B;border-radius:12px;padding:14px 20px"><p style="font-family:'JetBrains Mono', monospace;font-size:24px;color:#EDE7D8;white-space:nowrap">ventas.iloc[0:2, 0:3]</p></div>
+<table style="font-family:'JetBrains Mono', monospace;font-size:24px;color:#17262B;width:100%">
+<tr><th style="width:10%"></th><th style="width:17%">id_venta</th><th style="width:28%">fecha</th><th style="width:45%">ciudad</th></tr>
+<tr><td>0</td><td>1</td><td>2026-01-01</td><td>Barranquilla</td></tr>
+<tr><td>1</td><td>2</td><td>2026-01-04</td><td>Cali</td></tr>
+</table>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1400px;font-family:'JetBrains Mono', monospace;font-size:24px;color:#4B5A5E">NumPy y pandas · 14 / 25 · con ventas["col"] eliges una columna; con [["a","b"]], varias</p>
+<aside>La confusión clásica: loc[0:2] devuelve TRES filas (0, 1 y 2) porque en las etiquetas el final se incluye; iloc[0:2] devuelve DOS (0 y 1) porque en las posiciones el final se excluye, como en el slicing de Python. Nemotecnia: loc = Label, iloc = Integer. Aquí el índice vale lo mismo que la posición, por eso se confunden; en cuanto se ordene o filtre la tabla, las etiquetas y las posiciones dejarán de coincidir y la diferencia será crítica. Ejercicio rápido: pida a los alumnos que digan cuántas filas devuelve ventas.iloc[3:6]. Tres (posiciones 3, 4 y 5).</aside>
+</section>

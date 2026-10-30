@@ -1,0 +1,43 @@
+<section id="filtros" data-transition="fade" style="background:#F3EEE3;color:#17262B;font-family:'IBM Plex Sans', Arial, sans-serif;padding:96px 128px 160px;display:flex;flex-direction:column;gap:28px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-family:'JetBrains Mono', monospace;font-size:24px;color:#B0431A;letter-spacing:2px;text-transform:uppercase">pandas · 4 de 4 · filtrar y crear columnas</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:60px;font-weight:700;line-height:1.1">La misma plantilla de True/False, ahora en filas</h2>
+</div>
+<div style="display:flex;gap:24px">
+<div style="flex:1;background:#17262B;color:#F3EEE3;border-radius:16px;padding:22px 26px;display:flex;flex-direction:column;gap:10px">
+<p style="font-family:'JetBrains Mono', monospace;font-size:24px;line-height:1.45;color:#EDE7D8;white-space:nowrap">ventas["precio_unitario"]<br>&#160;&#160;&gt; 50000</p>
+<p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:64px;font-weight:700;line-height:1;color:#6FD1CC">20</p>
+<p style="font-size:26px;color:#C9D3CF">de 40 filas cumplen</p>
+</div>
+<div style="flex:1;background:#17262B;color:#F3EEE3;border-radius:16px;padding:22px 26px;display:flex;flex-direction:column;gap:10px">
+<p style="font-family:'JetBrains Mono', monospace;font-size:24px;line-height:1.45;color:#EDE7D8;white-space:nowrap">ventas["ciudad"]<br>&#160;&#160;.isin(["Cali","Medellín"])</p>
+<p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:64px;font-weight:700;line-height:1;color:#6FD1CC">21</p>
+<p style="font-size:26px;color:#C9D3CF">filas de Cali o Medellín</p>
+</div>
+<div style="flex:1;background:#17262B;color:#F3EEE3;border-radius:16px;padding:22px 26px;display:flex;flex-direction:column;gap:10px">
+<p style="font-family:'JetBrains Mono', monospace;font-size:24px;line-height:1.45;color:#EDE7D8;white-space:nowrap">(ciudad == "Bogotá") &amp;<br>(producto == "Mochila")</p>
+<p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:64px;font-weight:700;line-height:1;color:#F59A6B">0</p>
+<p style="font-size:26px;color:#C9D3CF">Empty DataFrame: vacío también es respuesta</p>
+</div>
+</div>
+<div style="display:flex;gap:32px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-family:'JetBrains Mono', monospace;font-size:24px;color:#1C7C7D;letter-spacing:2px">COLUMNAS NUEVAS · ventas.head()</p>
+<table style="font-family:'JetBrains Mono', monospace;font-size:24px;color:#17262B;width:1080px">
+<tr><th style="width:19%">ciudad</th><th style="width:14%">region</th><th style="width:13%">cantidad</th><th style="width:21%">precio_unitario</th><th style="width:16%">total</th><th style="width:17%">tipo_venta</th></tr>
+<tr><td>Barranquilla</td><td>Caribe</td><td>5</td><td>1200.0</td><td>6000.0</td><td>pequeña</td></tr>
+<tr><td>Cali</td><td>Pacífica</td><td>3</td><td>85000.0</td><td>255000.0</td><td>grande</td></tr>
+<tr><td>Cali</td><td>Pacífica</td><td>9</td><td>1200.0</td><td>10800.0</td><td>pequeña</td></tr>
+<tr><td>Barranquilla</td><td>Caribe</td><td>8</td><td>85000.0</td><td>680000.0</td><td>grande</td></tr>
+</table>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px">
+<p style="font-family:'JetBrains Mono', monospace;font-size:24px;color:#B0431A;letter-spacing:2px">CÓDIGO (resumido)</p>
+<div style="background:#17262B;border-radius:16px;padding:20px 24px">
+<p style="font-family:'JetBrains Mono', monospace;font-size:24px;line-height:1.45;color:#EDE7D8;white-space:nowrap">total = cantidad * precio<br>tipo = np.where(total &gt;=<br>&#160;&#160;100000, "grande", "pequeña")<br>region = ciudad.map(dic)</p>
+</div>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:900px;font-family:'JetBrains Mono', monospace;font-size:24px;color:#4B5A5E">NumPy y pandas · 15 / 25</p>
+<aside>Conexión directa con la diapositiva 8: filtrar un DataFrame es exactamente lo mismo, pero la plantilla de True/False tiene una entrada por fila. Tres ejemplos con resultados reales: 20 de las 40 ventas son de productos de más de 50.000; 21 son de Cali o Medellín (isin evita encadenar condiciones con |); y la combinación Bogotá + Mochila devuelve un DataFrame vacío. Enfatice que vacío no es un error: significa que no hubo coincidencias. Abajo, las columnas nuevas se crean con operaciones de columna completa: total = cantidad × precio; np.where decide 'grande' o 'pequeña' según un umbral de 100.000; map traduce ciudad a región con un diccionario. La tabla muestra las primeras 4 filas reales (el notebook muestra 5). El código aquí está resumido; la versión exacta está en la sección 2.4 del notebook.</aside>
+</section>

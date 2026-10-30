@@ -1,0 +1,48 @@
+<section id="pandas" data-transition="fade" style="background:#F3EEE3;color:#17262B;font-family:'IBM Plex Sans', Arial, sans-serif;padding:96px 128px 160px;display:flex;flex-direction:column;gap:30px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-family:'JetBrains Mono', monospace;font-size:24px;color:#B0431A;letter-spacing:2px;text-transform:uppercase">pandas · 1 de 4</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:60px;font-weight:700;line-height:1.1">Un DataFrame es un montón de Series con el mismo índice</h2>
+</div>
+<div style="display:flex;align-items:center;gap:28px">
+<div style="display:flex;flex-direction:column;gap:8px">
+<p style="font-family:'JetBrains Mono', monospace;font-size:24px;color:#4B5A5E">Series «nota»</p>
+<div style="display:flex;gap:6px"><div style="width:130px;background:#E8E1D1;border-radius:8px;padding:10px 0"><p style="font-family:'JetBrains Mono', monospace;font-size:26px;text-align:center">Ana</p></div><div style="width:110px;background:#1C7C7D;color:#F3EEE3;border-radius:8px;padding:10px 0"><p style="font-family:'JetBrains Mono', monospace;font-size:26px;font-weight:700;text-align:center">3.5</p></div></div>
+<div style="display:flex;gap:6px"><div style="width:130px;background:#E8E1D1;border-radius:8px;padding:10px 0"><p style="font-family:'JetBrains Mono', monospace;font-size:26px;text-align:center">Luis</p></div><div style="width:110px;background:#1C7C7D;color:#F3EEE3;border-radius:8px;padding:10px 0"><p style="font-family:'JetBrains Mono', monospace;font-size:26px;font-weight:700;text-align:center">4.1</p></div></div>
+<div style="display:flex;gap:6px"><div style="width:130px;background:#E8E1D1;border-radius:8px;padding:10px 0"><p style="font-family:'JetBrains Mono', monospace;font-size:26px;text-align:center">Marta</p></div><div style="width:110px;background:#1C7C7D;color:#F3EEE3;border-radius:8px;padding:10px 0"><p style="font-family:'JetBrains Mono', monospace;font-size:26px;font-weight:700;text-align:center">2.9</p></div></div>
+<p style="font-size:24px;color:#4B5A5E">índice + valores</p>
+</div>
+<p style="font-size:56px;font-weight:700;color:#B0431A">+</p>
+<div style="display:flex;flex-direction:column;gap:8px">
+<p style="font-family:'JetBrains Mono', monospace;font-size:24px;color:#4B5A5E">otras Series</p>
+<div style="width:300px;border:3px dashed #4B5A5E;border-radius:12px;padding:20px 24px"><p style="font-family:'JetBrains Mono', monospace;font-size:26px;line-height:1.5">edad<br>ciudad</p></div>
+<p style="font-size:24px;color:#4B5A5E">mismo índice</p>
+</div>
+<p style="font-size:56px;font-weight:700;color:#B0431A">=</p>
+<div style="flex:1;display:flex;flex-direction:column;gap:8px">
+<p style="font-family:'JetBrains Mono', monospace;font-size:24px;color:#4B5A5E">DataFrame</p>
+<table style="font-family:'JetBrains Mono', monospace;font-size:26px;color:#17262B;width:100%">
+<tr><th style="width:22%"></th><th style="width:24%">nota</th><th style="width:20%">edad</th><th style="width:34%">ciudad</th></tr>
+<tr><td>Ana</td><td>3.5</td><td>23</td><td>Bogotá</td></tr>
+<tr><td>Luis</td><td>4.1</td><td>31</td><td>Cali</td></tr>
+<tr><td>Marta</td><td>2.9</td><td>27</td><td>Cali</td></tr>
+</table>
+</div>
+</div>
+<div style="display:flex;gap:32px">
+<div style="flex:1.1;display:flex;flex-direction:column;gap:12px">
+<p style="font-family:'JetBrains Mono', monospace;font-size:24px;color:#B0431A;letter-spacing:2px">CÓDIGO</p>
+<div style="background:#17262B;border-radius:16px;padding:22px 30px">
+<p style="font-family:'JetBrains Mono', monospace;font-size:25px;line-height:1.5;color:#EDE7D8;white-space:nowrap">s = pd.Series([3.5, 4.1, 2.9],<br>&#160;&#160;&#160;&#160;index=["Ana", "Luis", "Marta"],<br>&#160;&#160;&#160;&#160;name="nota")<br>print(s["Luis"], s.mean())<br>print(type(s.values))</p>
+</div>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px">
+<p style="font-family:'JetBrains Mono', monospace;font-size:24px;color:#1C7C7D;letter-spacing:2px">RESULTADO</p>
+<div style="background:#DCE9E4;border-left:8px solid #1C7C7D;border-radius:16px;padding:22px 30px">
+<p style="font-family:'JetBrains Mono', monospace;font-size:25px;line-height:1.5;color:#17262B;white-space:nowrap">4.1 3.5<br>&lt;class 'numpy.ndarray'&gt;</p>
+</div>
+<p style="font-size:26px;color:#4B5A5E;line-height:1.35">Por dentro de la Series hay un arreglo de NumPy: la caja de huevos con rótulos.</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:900px;font-family:'JetBrains Mono', monospace;font-size:24px;color:#4B5A5E">NumPy y pandas · 12 / 25</p>
+<aside>Aquí empieza pandas. Construya la imagen en tres movimientos: una Series es una columna con nombre de fila (índice); un DataFrame es varias Series pegadas por ese mismo índice; por eso se pueden consultar por nombre. s['Luis'] da 4.1 y s.mean() da 3.5 ((3.5+4.1+2.9)/3). La última línea del código demuestra lo anunciado en la diapositiva 3: s.values es un numpy.ndarray. Consecuencia práctica: todo lo aprendido en NumPy (vectorización, máscaras, axis) funciona sobre columnas de pandas. En la tabla de la derecha, edad y ciudad son ilustrativas; el dataset real de la clase aparece en la siguiente diapositiva.</aside>
+</section>
